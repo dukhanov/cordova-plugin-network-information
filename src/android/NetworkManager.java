@@ -139,6 +139,12 @@ public class NetworkManager extends CordovaPlugin {
             pluginResult.setKeepCallback(true);
             callbackContext.sendPluginResult(pluginResult);
             return true;
+        } else if (action.equals("updateConnectionInfo")) {
+            if(NetworkManager.this.webView != null)
+                updateConnectionInfo(sockMan.getActiveNetworkInfo());
+
+            callbackContext.success();
+            return true;
         }
         return false;
     }

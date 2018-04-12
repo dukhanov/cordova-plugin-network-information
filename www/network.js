@@ -48,6 +48,16 @@ NetworkConnection.prototype.getInfo = function (successCallback, errorCallback) 
     exec(successCallback, errorCallback, 'NetworkStatus', 'getConnectionInfo', []);
 };
 
+/**
+ * Updates the current connection info
+ *
+ * @param {Function} successCallback The function to call when the Connection data is updated
+ * @param {Function} errorCallback The function to call when there is an error getting the Connection data. (OPTIONAL)
+ */
+NetworkConnection.prototype.updateConnectionInfo = function (successCallback, errorCallback) {
+    exec(successCallback, errorCallback, 'NetworkStatus', 'updateConnectionInfo', []);
+};
+
 var me = new NetworkConnection();
 var timerId = null;
 var timeout = 500;
